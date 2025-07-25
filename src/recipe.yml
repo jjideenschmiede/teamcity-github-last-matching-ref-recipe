@@ -1,23 +1,41 @@
-name: jjideenschmiede/git-commit-hash
-title: Git Commit Hash Variable
+name: jjideenschmiede/github-last-matching-ref
 version: 1.0.0
 description: |
-  Creates a short version of the current Git commit hash and sets it as an environment variable.
+  Fetches the latest Git reference (branch or tag) from a GitHub repository
+  that matches a specified pattern. The result is stored in an environment variable.
 inputs:
-  - env.input_hash_length:
+  - env.input_repository:
       type: text
-      required: false
-      label: Hash Length
+      required: true
+      label: Repository
       description: |
-        The number of characters for the short commit hash (between 4 and 40).
-      default: "7"
+        GitHub repository in "owner/repo" format (e.g., "JetBrains/teamcity-recipes").
+  - env.input_ref:
+      type: text
+      required: true
+      label: Reference Pattern
+      description: |
+        The Git reference pattern to match. Examples:
+        - "heads/" - List all branches
+        - "tags/" - List all tags
+        - "heads/feature" - List branches starting with "feature"
+        - "tags/v1." - List tags starting with "v1."
+        - "heads/main" - Get specific branch "main"
+      default: "tags"
+  - env.input_github_access_token:
+      type: password
+      required: false
+      label: GitHub Access Token
+      description: |
+        Optional GitHub personal access token for authenticated requests.
+        Increases rate limits and allows access to private repositories.
   - env.input_variable_name:
       type: text
       required: false
       label: Environment Variable Name
       description: |
-        The name of the environment variable to store the short commit hash.
-      default: "GIT_COMMIT_SHORT_HASH"
+        The name of the environment variable to store the latest reference.
+      default: "GITHUB_LATEST_REF"
 steps:
-  - name: Set Git Commit Hash Environment Variable
+  - name: Fetch latest GitHub release version
     kotlin-script: !include src.main.kts
