@@ -1,6 +1,8 @@
-# TeamCity Git Commit Hash Recipe
+# TeamCity GitHub Last Matching Ref Recipe
 
-This recipe provides a simple way to get the current Git commit hash in TeamCity build configurations. In the default configuration, the commit hash is available as environment variable `%env.GIT_COMMIT_SHORT_HASH%`.
+This TeamCity recipe fetches the latest GitHub reference (branch or tag) that matches a given pattern — such as `tags/v1` or `heads/feature`. The result is stored in a configurable environment variable and can be used throughout your build pipeline.
+
+Ideal for release pipelines, dynamic versioning, or selecting the latest relevant code state from GitHub.
 
 ---
 
@@ -21,7 +23,7 @@ We are **TeamCity Certified** and **YouTrack Certified** developers, specializin
 
 ## Requirements
 
-You need to have TeamCity 2025.03 or later installed to use this recipe. If you are using an older version than 2025.07, you need to upload the `git-commit-hash.yaml`, which contains the complete recipe. If you are using TeamCity 2025.07 or later, you can use the `jjideenschmiede/git-commit-hash` recipe directly from the JetBrains Marketplace.
+You need to have TeamCity 2025.03 or later installed to use this recipe. If you are using an older version than 2025.07, you need to upload the `github-last-matching-ref.yaml`, which contains the complete recipe. If you are using TeamCity 2025.07 or later, you can use the `jjideenschmiede/github-last-matching-ref` recipe directly from the JetBrains Marketplace.
 
 ## Build
 
