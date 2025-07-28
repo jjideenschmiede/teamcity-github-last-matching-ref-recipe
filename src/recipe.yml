@@ -1,4 +1,5 @@
 name: jjideenschmiede/github-last-matching-ref
+title: Fetch Latest GitHub Ref
 version: 1.0.0
 description: |
   Fetches the latest Git reference (branch or tag) from a GitHub repository
