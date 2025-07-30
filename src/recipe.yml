@@ -1,8 +1,8 @@
 name: jjideenschmiede/github-last-matching-ref
-title: Fetch Latest GitHub Ref
+title: Fetch last matching GitHub reference
 version: 1.0.0
 description: |
-  Fetches the latest Git reference (branch or tag) from a GitHub repository
+  Fetches the last Git reference (branch or tag) from a GitHub repository
   that matches a specified pattern. The result is stored in an environment variable.
 inputs:
   - env.input_repository:
@@ -35,8 +35,8 @@ inputs:
       required: false
       label: Environment Variable Name
       description: |
-        The name of the environment variable to store the latest reference.
+        The name of the environment variable to store the last matching reference.
       default: "GITHUB_LATEST_REF"
 steps:
-  - name: Fetch latest GitHub release version
+  - name: Fetch last matching GitHub release version
     kotlin-script: !include src.main.kts
