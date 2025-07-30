@@ -1,6 +1,6 @@
 name: jjideenschmiede/github-last-matching-ref
-title: Fetch last matching GitHub reference
-version: 1.0.0
+title: Fetch Last Matching GitHub Reference
+version: 1.0.1
 description: |
   Fetches the last Git reference (branch or tag) from a GitHub repository
   that matches a specified pattern. The result is stored in an environment variable.
