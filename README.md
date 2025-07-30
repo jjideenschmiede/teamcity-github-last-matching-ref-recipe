@@ -1,6 +1,6 @@
 # TeamCity GitHub Last Matching Ref Recipe
 
-This TeamCity recipe fetches the latest GitHub reference (branch or tag) that matches a given pattern — such as `tags/v1` or `heads/feature`. The result is stored in a configurable environment variable and can be used throughout your build pipeline.
+This TeamCity recipe fetches the last matching GitHub reference (branch or tag) that matches a given pattern — such as `tags/v1` or `heads/feature`. The result is stored in a configurable environment variable and can be used throughout your build pipeline.
 
 Ideal for release pipelines, dynamic versioning, or selecting the latest relevant code state from GitHub.
 
