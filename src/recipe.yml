@@ -38,5 +38,5 @@ inputs:
         The name of the environment variable to store the last matching reference.
       default: "GITHUB_LATEST_REF"
 steps:
-  - name: Fetch latest GitHub release version
+  - name: Fetch last matching GitHub release version
     kotlin-script: !include src.main.kts
